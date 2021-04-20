@@ -2,7 +2,7 @@
 
 Esse projeto foi **baseado em uma playlist do YouTube** sobre a construção de tabelas de dados utilizando Laravel e Vue. O projeto se resume em uma simples aplicação para criar uma tabela de dados de estudantes com diversos recursos.
 
--   [Playlist](https://www.youtube.com/watch?v=93q3LqYJTsI&list=PLBCuZqyXqWkz-0xsvvcf-4CwwAiugzmOl).
+-   [Playlist dos vídeos](https://www.youtube.com/watch?v=93q3LqYJTsI&list=PLBCuZqyXqWkz-0xsvvcf-4CwwAiugzmOl).
 -   [Conheça mais sobre Laravel](https://laravel.com/docs/8.x).
 
 ## Como utilizar
@@ -18,4 +18,4 @@ Após baixar o projeto será necessário executar alguns comandos para poder exe
 7. npm run dev (build dos scripts)
 8. php artisan serve (inicializar a apliação)
 
-Após esses comandos a aplicação já estará rodando no [localhost](http://localhost:8000/students).
+Após esses comandos a aplicação já estará rodando no [localhost/students](http://localhost:8000/students).
