@@ -5,6 +5,7 @@ Esse projeto foi **baseado em uma playlist do YouTube** sobre a construção de 
 -   [Playlist dos vídeos](https://www.youtube.com/watch?v=93q3LqYJTsI&list=PLBCuZqyXqWkz-0xsvvcf-4CwwAiugzmOl).
 -   [Repositório no GitHub](https://github.com/tapan288/vue_datatables/tree/paginations-with-vue)
 -   [Conheça mais sobre Laravel](https://laravel.com/docs/8.x).
+-   [Laravel Excel Export](https://docs.laravel-excel.com/3.1/getting-started/installation.html)
 
 ## Como utilizar
 

@@ -76,6 +76,7 @@
                                 Delete
                             </a>
                             <a
+                                :href="url"
                                 class="dropdown-item"
                                 type="button"
                             >
@@ -200,6 +201,7 @@ export default {
             selectedAllStudents: false,
             sortDiraction: 'desc',
             sortField: 'created_at',
+            url: '',
         }
     },
 
@@ -235,6 +237,9 @@ export default {
                 this.checked = []
                 this.selectedAllStudents = false
             }
+        },
+        checked: function(value) {
+            this.url = `/api/students/export/${this.checked}`;
         }
     },
 

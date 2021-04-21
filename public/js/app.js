@@ -2070,6 +2070,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2084,7 +2085,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       selectedStudentsOnPage: false,
       selectedAllStudents: false,
       sortDiraction: 'desc',
-      sortField: 'created_at'
+      sortField: 'created_at',
+      url: ''
     };
   },
   watch: (_watch = {
@@ -2120,6 +2122,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.checked = [];
       this.selectedAllStudents = false;
     }
+  }), _defineProperty(_watch, "checked", function checked(value) {
+    this.url = "/api/students/export/".concat(this.checked);
   }), _watch),
   methods: {
     getStudents: function getStudents() {
@@ -38809,7 +38813,10 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "a",
-                    { staticClass: "dropdown-item", attrs: { type: "button" } },
+                    {
+                      staticClass: "dropdown-item",
+                      attrs: { href: _vm.url, type: "button" }
+                    },
                     [
                       _vm._v(
                         "\n                            Export\n                        "

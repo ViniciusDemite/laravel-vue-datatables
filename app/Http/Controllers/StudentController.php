@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StudentExport;
 use App\Http\Resources\StudentResource;
 use App\Models\Student;
 
@@ -55,5 +56,11 @@ class StudentController extends Controller
         Student::whereKey($studentsArray)->delete();
 
         return response()->noContent();
+    }
+
+    public function export(string $students) {
+        $studentsArray = explode(',', $students);
+
+        return (new StudentExport($studentsArray))->download('students.xlsx');
     }
 }
