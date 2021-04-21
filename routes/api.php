@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('students', [StudentController::class, 'index']);
+Route::get('classes', [ClassesController::class, 'index']);
+Route::get('sections', [SectionController::class, 'index']);

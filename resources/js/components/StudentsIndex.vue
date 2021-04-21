@@ -19,28 +19,38 @@
                 </div>
                 <div>
                     <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0"
-                            >FilterBy Class</label
-                        >
-                        <select
+                        <label for="paginate" class="text-nowrap mr-2 mb-0">FilterBy Class</label>
+                        <select 
+                            v-model="selectedClass"
                             class="form-control form-control-sm"
                         >
                             <option value="">All Class</option>
-                            <option value="1">Class 1</option>
+                            <option
+                                v-for="item in classes"
+                                :key="item.id"
+                                :value="item.id"
+                            >
+                                {{ item.name }}
+                            </option>
                         </select>
                     </div>
                 </div>
 
-                <div>
+                <div v-if="selectedClass">
                     <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0"
-                            >Section</label
-                        >
+                        <label for="paginate" class="text-nowrap mr-2 mb-0">Section</label>
                         <select
+                            v-model="selectedSection"
                             class="form-control form-control-sm"
                         >
                             <option value="">Select a Section</option>
-                            <option value="1">Section A</option>
+                            <option 
+                                v-for="section in sections"
+                                :key="section.id"
+                                :value="section.id"
+                            >
+                                {{ section.name }}
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -143,6 +153,10 @@ export default {
             students: {},
             paginate: 10,
             search: "",
+            classes: {},
+            selectedClass: '',
+            selectedSection: '',
+            sections: {}
         }
     },
 
@@ -152,12 +166,28 @@ export default {
         },
         search: function(value) {
             this.getStudents()
+        },
+        selectedClass: function(value) {
+            axios.get(`api/sections?class_id=${this.selectedClass}`)
+                .then((response) => {
+                    this.sections = response.data.data
+                })
+
+            this.getStudents()
+        },
+        selectedSection: function(value) {
+            this.getStudents()
+        },
+        selectedSection: function(value) {
+            this.getStudents()
         }
     },
 
     methods: {
         getStudents(page = 1) {
-            axios.get(`api/students?page=${page}&paginate=${this.paginate}&q=${this.search}`)
+            axios.get(`
+                    api/students?page=${page}&paginate=${this.paginate}&q=${this.search}&selectedClass=${this.selectedClass}&selectedSection=${this.selectedSection}
+                `)
                 .then((response) => {
                     this.students = response.data
                 })
@@ -165,7 +195,12 @@ export default {
     },
 
     mounted() {
-        this.getStudents(); 
+        axios.get(`api/classes`)
+            .then((response) => {
+                this.classes = response.data.data
+            })
+
+        this.getStudents();
     }
 }
 </script>

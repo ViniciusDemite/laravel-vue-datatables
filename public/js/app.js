@@ -1880,6 +1880,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2023,28 +2035,50 @@ __webpack_require__.r(__webpack_exports__);
     return {
       students: {},
       paginate: 10,
-      search: ""
+      search: "",
+      classes: {},
+      selectedClass: '',
+      selectedSection: '',
+      sections: {}
     };
   },
-  watch: {
+  watch: _defineProperty({
     paginate: function paginate(value) {
       this.getStudents();
     },
     search: function search(value) {
       this.getStudents();
-    }
-  },
-  methods: {
-    getStudents: function getStudents() {
+    },
+    selectedClass: function selectedClass(value) {
       var _this = this;
 
+      axios.get("api/sections?class_id=".concat(this.selectedClass)).then(function (response) {
+        _this.sections = response.data.data;
+      });
+      this.getStudents();
+    },
+    selectedSection: function selectedSection(value) {
+      this.getStudents();
+    }
+  }, "selectedSection", function selectedSection(value) {
+    this.getStudents();
+  }),
+  methods: {
+    getStudents: function getStudents() {
+      var _this2 = this;
+
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get("api/students?page=".concat(page, "&paginate=").concat(this.paginate, "&q=").concat(this.search)).then(function (response) {
-        _this.students = response.data;
+      axios.get("\n                    api/students?page=".concat(page, "&paginate=").concat(this.paginate, "&q=").concat(this.search, "&selectedClass=").concat(this.selectedClass, "&selectedSection=").concat(this.selectedSection, "\n                ")).then(function (response) {
+        _this2.students = response.data;
       });
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
+
+    axios.get("api/classes").then(function (response) {
+      _this3.classes = response.data.data;
+    });
     this.getStudents();
   }
 });
@@ -38375,11 +38409,133 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(0),
+          _c("div", [
+            _c("div", { staticClass: "d-flex align-items-center ml-4" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "text-nowrap mr-2 mb-0",
+                  attrs: { for: "paginate" }
+                },
+                [_vm._v("FilterBy Class")]
+              ),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selectedClass,
+                      expression: "selectedClass"
+                    }
+                  ],
+                  staticClass: "form-control form-control-sm",
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.selectedClass = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "" } }, [_vm._v("All Class")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.classes, function(item) {
+                    return _c(
+                      "option",
+                      { key: item.id, domProps: { value: item.id } },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(item.name) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  })
+                ],
+                2
+              )
+            ])
+          ]),
           _vm._v(" "),
-          _vm._m(1),
+          _vm.selectedClass
+            ? _c("div", [
+                _c("div", { staticClass: "d-flex align-items-center ml-4" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "text-nowrap mr-2 mb-0",
+                      attrs: { for: "paginate" }
+                    },
+                    [_vm._v("Section")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.selectedSection,
+                          expression: "selectedSection"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.selectedSection = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "" } }, [
+                        _vm._v("Select a Section")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.sections, function(section) {
+                        return _c(
+                          "option",
+                          { key: section.id, domProps: { value: section.id } },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(section.name) +
+                                "\n                        "
+                            )
+                          ]
+                        )
+                      })
+                    ],
+                    2
+                  )
+                ])
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(0)
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-4" }, [
@@ -38409,18 +38565,18 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(1),
     _vm._v(" "),
     _c("div", { staticClass: "card-body table-responsive p-0" }, [
       _c("table", { staticClass: "table table-hover" }, [
         _c(
           "tbody",
           [
-            _vm._m(4),
+            _vm._m(2),
             _vm._v(" "),
             _vm._l(_vm.students.data, function(student) {
               return _c("tr", { key: student.id }, [
-                _vm._m(5, true),
+                _vm._m(3, true),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(student.name))]),
                 _vm._v(" "),
@@ -38436,7 +38592,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(student.section))]),
                 _vm._v(" "),
-                _vm._m(6, true)
+                _vm._m(4, true)
               ])
             })
           ],
@@ -38461,46 +38617,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "d-flex align-items-center ml-4" }, [
-        _c(
-          "label",
-          { staticClass: "text-nowrap mr-2 mb-0", attrs: { for: "paginate" } },
-          [_vm._v("FilterBy Class")]
-        ),
-        _vm._v(" "),
-        _c("select", { staticClass: "form-control form-control-sm" }, [
-          _c("option", { attrs: { value: "" } }, [_vm._v("All Class")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [_vm._v("Class 1")])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "d-flex align-items-center ml-4" }, [
-        _c(
-          "label",
-          { staticClass: "text-nowrap mr-2 mb-0", attrs: { for: "paginate" } },
-          [_vm._v("Section")]
-        ),
-        _vm._v(" "),
-        _c("select", { staticClass: "form-control form-control-sm" }, [
-          _c("option", { attrs: { value: "" } }, [_vm._v("Select a Section")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "1" } }, [_vm._v("Section A")])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
