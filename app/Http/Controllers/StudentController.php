@@ -7,7 +7,8 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $paginate = request('paginate', 10);
         $searchTerm = request('q', '');
         $selectedClass = request('selectedClass');
@@ -24,5 +25,24 @@ class StudentController extends Controller
             ->paginate($paginate);
 
         return StudentResource::collection($students);
+    }
+
+    public function allStudents() {
+        return Student::pluck('id');
+    }
+
+    public function destroy(Student $student)
+    {
+        $student->delete();
+        
+        return response()->noContent();
+    }
+
+    public function massDestroy(string $students)
+    {
+        $studentsArray = explode(',', $students);
+        Student::whereKey($studentsArray)->delete();
+
+        return response()->noContent();
     }
 }

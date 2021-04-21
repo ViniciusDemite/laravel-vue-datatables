@@ -4,9 +4,7 @@
             <div class="d-flex">
                 <div>
                     <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0"
-                            >Per Page</label
-                        >
+                        <label for="paginate" class="text-nowrap mr-2 mb-0">Per Page</label>
                         <select
                             v-model="paginate"
                             class="form-control form-control-sm"
@@ -58,16 +56,22 @@
                 <div>
                     <div class="dropdown ml-4">
                         <button
+                            v-if="checked.length > 0"
                             class="btn btn-secondary dropdown-toggle"
                             data-toggle="dropdown"
+                            id="dropdownMenu"
+                            aria-haspopup="true"
+                            aria-expanded="false"
                         >
-                            With Checked (1)
+                            With Checked ({{ checked.length }})
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
                             <a
                                 href="#"
                                 class="dropdown-item"
                                 type="button"
+                                onclick="confirm('Are you sure you wanna to delete the selected students?') || event.stopImmediatePropagation()"
+                                @click.prevent="deleteStudents"
                             >
                                 Delete
                             </a>
@@ -91,17 +95,23 @@
             </div>
         </div>
 
-        <div class="col-md-10 mb-2">
-            <div>
+        <div class="col-md-10 mb-2" v-if="selectPage">
+            <div v-if="selectAll">
                 You are currently selecting all
-                <strong>10</strong> items.
+                <strong>{{ checked.length }}</strong> items.
             </div>
-            <div>
-                You have selected <strong>10</strong> items,
+            <div v-else>
+                You have selected <strong>{{ checked.length }}</strong> items,
                 Do you want to Select All
-                <strong>25</strong
+                <strong>{{ students.meta.total }}</strong
                 >?
-                <a href="" class="ml-2">Select All</a>
+                <a 
+                    href="#"
+                    class="ml-2"
+                    @click.prevent="selectAllStudents"
+                >
+                    Select All
+                </a>
             </div>
         </div>
 
@@ -109,7 +119,9 @@
             <table class="table table-hover">
                 <tbody>
                     <tr>
-                        <th><input type="checkbox"/></th>
+                        <th>
+                            <input type="checkbox" v-model="selectPage" />
+                        </th>
                         <th>Student's Name</th>
                         <th>Email</th>
                         <th>Address</th>
@@ -121,7 +133,9 @@
                     </tr>
 
                     <tr v-for="student in students.data" :key="student.id">
-                        <td><input type="checkbox"/></td>
+                        <td>
+                            <input type="checkbox" :value="student.id" v-model="checked"/>
+                        </td>
                         <td>{{ student.name }}</td>
                         <td>{{ student.email }}</td>
                         <td>{{ student.address }}</td>
@@ -130,7 +144,11 @@
                         <td>{{ student.class }}</td>
                         <td>{{ student.section }}</td>
                         <td>
-                            <button class="btn btn-danger btn-sm">
+                            <button 
+                                class="btn btn-danger btn-sm"
+                                onclick="confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
+                                @click="deleteSingleStudent(student.id)"
+                            >
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </button>
                         </td>
@@ -156,7 +174,10 @@ export default {
             classes: {},
             selectedClass: '',
             selectedSection: '',
-            sections: {}
+            sections: {},
+            checked: [],
+            selectPage: false,
+            selectAll: false,
         }
     },
 
@@ -180,6 +201,18 @@ export default {
         },
         selectedSection: function(value) {
             this.getStudents()
+        },
+        selectPage: function(value) {
+            this.checked = []
+
+            if (value) {
+                this.students.data.forEach(student => {
+                    this.checked.push(student.id)
+                })
+            } else {
+                this.checked = []
+                this.selectAll = false
+            }
         }
     },
 
@@ -190,6 +223,31 @@ export default {
                 `)
                 .then((response) => {
                     this.students = response.data
+                })
+        },
+        deleteSingleStudent(studentId) {
+            axios.delete(`api/students/${studentId}`)
+                .then((response) => {
+                    this.checked = this.checked.filter((id) => id != studentId)
+                    this.$toast.success('Student Deleted Successfully')
+                    this.getStudents()
+                })
+        },
+        deleteStudents: function() {
+            axios.delete(`api/students/mass-destroy/${this.checked}`)
+                .then((response) => {
+                    if (response.status === 204) {
+                        this.$toast.success('Selected Students were Deleted Successfully')
+                        this.checked = []
+                        this.getStudents()
+                    }
+                })
+        },
+        selectAllStudents: function() {
+            axios.get('api/students/all')
+                .then((response) => {
+                    this.checked = response.data
+                    this.selectAll = true
                 })
         }
     },

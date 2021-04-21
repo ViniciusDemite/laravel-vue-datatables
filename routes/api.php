@@ -23,5 +23,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('students', [StudentController::class, 'index']);
+Route::get('students/all', [StudentController::class, 'allStudents']);
+Route::delete('students/{student}', [StudentController::class, 'destroy']);
+Route::delete('students/mass-destroy/{students}', [StudentController::class, 'massDestroy']);
+
 Route::get('classes', [ClassesController::class, 'index']);
+
 Route::get('sections', [SectionController::class, 'index']);

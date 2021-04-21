@@ -95,8 +95,8 @@
 
     <!-- REQUIRED SCRIPTS -->
     <script src="{{ asset('backend/js/app/jquery.min.js') }}"></script>
-    <script src="{{ asset('backend/js/app/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('backend/js/app/adminlte.min.js') }}"></script>
+    {{--  <script src="{{ asset('backend/js/app/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/js/app/adminlte.min.js') }}"></script>  --}}
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('modal')
