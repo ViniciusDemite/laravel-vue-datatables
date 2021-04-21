@@ -2050,6 +2050,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2061,8 +2081,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       selectedSection: '',
       sections: {},
       checked: [],
-      selectPage: false,
-      selectAll: false
+      selectedStudentsOnPage: false,
+      selectedAllStudents: false,
+      sortDiraction: 'desc',
+      sortField: 'created_at'
     };
   },
   watch: (_watch = {
@@ -2085,7 +2107,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }, _defineProperty(_watch, "selectedSection", function selectedSection(value) {
     this.getStudents();
-  }), _defineProperty(_watch, "selectPage", function selectPage(value) {
+  }), _defineProperty(_watch, "selectedStudentsOnPage", function selectedStudentsOnPage(value) {
     var _this2 = this;
 
     this.checked = [];
@@ -2096,7 +2118,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     } else {
       this.checked = [];
-      this.selectAll = false;
+      this.selectedAllStudents = false;
     }
   }), _watch),
   methods: {
@@ -2104,9 +2126,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this3 = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get("\n                    api/students?page=".concat(page, "&paginate=").concat(this.paginate, "&q=").concat(this.search, "&selectedClass=").concat(this.selectedClass, "&selectedSection=").concat(this.selectedSection, "\n                ")).then(function (response) {
+      axios.get("api/students?page=".concat(page, "&paginate=").concat(this.paginate, "&q=").concat(this.search, "&selectedClass=").concat(this.selectedClass, "&selectedSection=").concat(this.selectedSection, "&sort_diraction=").concat(this.sortDiraction, "&sort_field=").concat(this.sortField)).then(function (response) {
         _this3.students = response.data;
       });
+    },
+    isChecked: function isChecked(studentId) {
+      return this.checked.includes(studentId);
     },
     deleteSingleStudent: function deleteSingleStudent(studentId) {
       var _this4 = this;
@@ -2139,8 +2164,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios.get('api/students/all').then(function (response) {
         _this6.checked = response.data;
-        _this6.selectAll = true;
+        _this6.selectedAllStudents = true;
       });
+    },
+    changeSort: function changeSort(field) {
+      if (this.sortField === field) {
+        this.sortDiraction = this.sortDiraction === 'asc' ? 'desc' : 'asc';
+      } else {
+        this.sortField = field;
+      }
+
+      this.getStudents();
     }
   },
   mounted: function mounted() {
@@ -38815,9 +38849,9 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm.selectPage
+    _vm.selectedStudentsOnPage
       ? _c("div", { staticClass: "col-md-10 mb-2" }, [
-          _vm.selectAll
+          _vm.selectedAllStudents
             ? _c("div", [
                 _vm._v(
                   "\n            You are currently selecting all\n            "
@@ -38863,49 +38897,160 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.selectPage,
-                      expression: "selectPage"
+                      value: _vm.selectedStudentsOnPage,
+                      expression: "selectedStudentsOnPage"
                     }
                   ],
                   attrs: { type: "checkbox" },
                   domProps: {
-                    checked: Array.isArray(_vm.selectPage)
-                      ? _vm._i(_vm.selectPage, null) > -1
-                      : _vm.selectPage
+                    checked: Array.isArray(_vm.selectedStudentsOnPage)
+                      ? _vm._i(_vm.selectedStudentsOnPage, null) > -1
+                      : _vm.selectedStudentsOnPage
                   },
                   on: {
                     change: function($event) {
-                      var $$a = _vm.selectPage,
+                      var $$a = _vm.selectedStudentsOnPage,
                         $$el = $event.target,
                         $$c = $$el.checked ? true : false
                       if (Array.isArray($$a)) {
                         var $$v = null,
                           $$i = _vm._i($$a, $$v)
                         if ($$el.checked) {
-                          $$i < 0 && (_vm.selectPage = $$a.concat([$$v]))
+                          $$i < 0 &&
+                            (_vm.selectedStudentsOnPage = $$a.concat([$$v]))
                         } else {
                           $$i > -1 &&
-                            (_vm.selectPage = $$a
+                            (_vm.selectedStudentsOnPage = $$a
                               .slice(0, $$i)
                               .concat($$a.slice($$i + 1)))
                         }
                       } else {
-                        _vm.selectPage = $$c
+                        _vm.selectedStudentsOnPage = $$c
                       }
                     }
                   }
                 })
               ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Student's Name")]),
+              _c("th", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changeSort("name")
+                      }
+                    }
+                  },
+                  [_vm._v("Student's Name")]
+                ),
+                _vm._v(" "),
+                _vm.sortDiraction === "desc" && _vm.sortField === "name"
+                  ? _c("span", [_vm._v("↑")])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.sortDiraction === "asc" && _vm.sortField === "name"
+                  ? _c("span", [_vm._v("↓")])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Email")]),
+              _c("th", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changeSort("email")
+                      }
+                    }
+                  },
+                  [_vm._v("Email")]
+                ),
+                _vm._v(" "),
+                _vm.sortDiraction === "desc" && _vm.sortField === "email"
+                  ? _c("span", [_vm._v("↑")])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.sortDiraction === "asc" && _vm.sortField === "email"
+                  ? _c("span", [_vm._v("↓")])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Address")]),
+              _c("th", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changeSort("address")
+                      }
+                    }
+                  },
+                  [_vm._v("Address")]
+                ),
+                _vm._v(" "),
+                _vm.sortDiraction === "desc" && _vm.sortField === "address"
+                  ? _c("span", [_vm._v("↑")])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.sortDiraction === "asc" && _vm.sortField === "address"
+                  ? _c("span", [_vm._v("↓")])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Phone Number")]),
+              _c("th", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changeSort("phone_number")
+                      }
+                    }
+                  },
+                  [_vm._v("Phone Number")]
+                ),
+                _vm._v(" "),
+                _vm.sortDiraction === "desc" && _vm.sortField === "phone_number"
+                  ? _c("span", [_vm._v("↑")])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.sortDiraction === "asc" && _vm.sortField === "phone_number"
+                  ? _c("span", [_vm._v("↓")])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
-              _c("th", [_vm._v("Created At")]),
+              _c("th", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changeSort("created_at")
+                      }
+                    }
+                  },
+                  [_vm._v("Created At")]
+                ),
+                _vm._v(" "),
+                _vm.sortDiraction === "desc" && _vm.sortField === "created_at"
+                  ? _c("span", [_vm._v("↑")])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.sortDiraction === "asc" && _vm.sortField === "created_at"
+                  ? _c("span", [_vm._v("↓")])
+                  : _vm._e()
+              ]),
               _vm._v(" "),
               _c("th", [_vm._v("Class")]),
               _vm._v(" "),
@@ -38915,86 +39060,93 @@ var render = function() {
             ]),
             _vm._v(" "),
             _vm._l(_vm.students.data, function(student) {
-              return _c("tr", { key: student.id }, [
-                _c("td", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.checked,
-                        expression: "checked"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      value: student.id,
-                      checked: Array.isArray(_vm.checked)
-                        ? _vm._i(_vm.checked, student.id) > -1
-                        : _vm.checked
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.checked,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = student.id,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.checked = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.checked = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.checked = $$c
+              return _c(
+                "tr",
+                {
+                  key: student.id,
+                  class: _vm.isChecked(student.id) ? "table-primary" : ""
+                },
+                [
+                  _c("td", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checked,
+                          expression: "checked"
                         }
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.email))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.address))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.phone_number))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.created_at))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.class))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(student.section))]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger btn-sm",
-                      attrs: {
-                        onclick:
-                          "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
+                      ],
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        value: student.id,
+                        checked: Array.isArray(_vm.checked)
+                          ? _vm._i(_vm.checked, student.id) > -1
+                          : _vm.checked
                       },
                       on: {
-                        click: function($event) {
-                          return _vm.deleteSingleStudent(student.id)
+                        change: function($event) {
+                          var $$a = _vm.checked,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = student.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.checked = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checked = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checked = $$c
+                          }
                         }
                       }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-trash",
-                        attrs: { "aria-hidden": "true" }
-                      })
-                    ]
-                  )
-                ])
-              ])
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.email))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.address))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.phone_number))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.created_at))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.class))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(student.section))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger btn-sm",
+                        attrs: {
+                          onclick:
+                            "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteSingleStudent(student.id)
+                          }
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-trash",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              )
             })
           ],
           2

@@ -95,8 +95,8 @@
             </div>
         </div>
 
-        <div class="col-md-10 mb-2" v-if="selectPage">
-            <div v-if="selectAll">
+        <div class="col-md-10 mb-2" v-if="selectedStudentsOnPage">
+            <div v-if="selectedAllStudents">
                 You are currently selecting all
                 <strong>{{ checked.length }}</strong> items.
             </div>
@@ -120,19 +120,39 @@
                 <tbody>
                     <tr>
                         <th>
-                            <input type="checkbox" v-model="selectPage" />
+                            <input type="checkbox" v-model="selectedStudentsOnPage" />
                         </th>
-                        <th>Student's Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>Created At</th>
+                        <th>
+                            <a href="#" @click.prevent="changeSort('name')">Student's Name</a>
+                            <span v-if="sortDiraction === 'desc' && sortField === 'name'">&uarr;</span>
+                            <span v-if="sortDiraction === 'asc' && sortField === 'name'">&darr;</span>
+                        </th>
+                        <th>
+                            <a href="#" @click.prevent="changeSort('email')">Email</a>
+                            <span v-if="sortDiraction === 'desc' && sortField === 'email'">&uarr;</span>
+                            <span v-if="sortDiraction === 'asc' && sortField === 'email'">&darr;</span>
+                        </th>
+                        <th>
+                            <a href="#" @click.prevent="changeSort('address')">Address</a>
+                            <span v-if="sortDiraction === 'desc' && sortField === 'address'">&uarr;</span>
+                            <span v-if="sortDiraction === 'asc' && sortField === 'address'">&darr;</span>
+                        </th>
+                        <th>
+                            <a href="#" @click.prevent="changeSort('phone_number')">Phone Number</a>
+                            <span v-if="sortDiraction === 'desc' && sortField === 'phone_number'">&uarr;</span>
+                            <span v-if="sortDiraction === 'asc' && sortField === 'phone_number'">&darr;</span>
+                        </th>
+                        <th>
+                            <a href="#" @click.prevent="changeSort('created_at')">Created At</a>
+                            <span v-if="sortDiraction === 'desc' && sortField === 'created_at'">&uarr;</span>
+                            <span v-if="sortDiraction === 'asc' && sortField === 'created_at'">&darr;</span>
+                        </th>
                         <th>Class</th>
                         <th>Section</th>
                         <th>Action</th>
                     </tr>
 
-                    <tr v-for="student in students.data" :key="student.id">
+                    <tr v-for="student in students.data" :key="student.id" :class="isChecked(student.id) ? 'table-primary' : ''">
                         <td>
                             <input type="checkbox" :value="student.id" v-model="checked"/>
                         </td>
@@ -176,8 +196,10 @@ export default {
             selectedSection: '',
             sections: {},
             checked: [],
-            selectPage: false,
-            selectAll: false,
+            selectedStudentsOnPage: false,
+            selectedAllStudents: false,
+            sortDiraction: 'desc',
+            sortField: 'created_at',
         }
     },
 
@@ -202,7 +224,7 @@ export default {
         selectedSection: function(value) {
             this.getStudents()
         },
-        selectPage: function(value) {
+        selectedStudentsOnPage: function(value) {
             this.checked = []
 
             if (value) {
@@ -211,19 +233,20 @@ export default {
                 })
             } else {
                 this.checked = []
-                this.selectAll = false
+                this.selectedAllStudents = false
             }
         }
     },
 
     methods: {
         getStudents(page = 1) {
-            axios.get(`
-                    api/students?page=${page}&paginate=${this.paginate}&q=${this.search}&selectedClass=${this.selectedClass}&selectedSection=${this.selectedSection}
-                `)
+            axios.get(`api/students?page=${page}&paginate=${this.paginate}&q=${this.search}&selectedClass=${this.selectedClass}&selectedSection=${this.selectedSection}&sort_diraction=${this.sortDiraction}&sort_field=${this.sortField}`)
                 .then((response) => {
                     this.students = response.data
                 })
+        },
+        isChecked(studentId) {
+            return this.checked.includes(studentId)
         },
         deleteSingleStudent(studentId) {
             axios.delete(`api/students/${studentId}`)
@@ -233,7 +256,7 @@ export default {
                     this.getStudents()
                 })
         },
-        deleteStudents: function() {
+        deleteStudents() {
             axios.delete(`api/students/mass-destroy/${this.checked}`)
                 .then((response) => {
                     if (response.status === 204) {
@@ -243,12 +266,21 @@ export default {
                     }
                 })
         },
-        selectAllStudents: function() {
+        selectAllStudents() {
             axios.get('api/students/all')
                 .then((response) => {
                     this.checked = response.data
-                    this.selectAll = true
+                    this.selectedAllStudents = true
                 })
+        },
+        changeSort(field) {
+            if (this.sortField === field) {
+                this.sortDiraction = this.sortDiraction === 'asc' ? 'desc' : 'asc'
+            } else {
+                this.sortField = field
+            }
+
+            this.getStudents()
         }
     },
 
