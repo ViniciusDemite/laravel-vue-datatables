@@ -87,12 +87,11 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <input
-                    v-model.lazy="search"
-                    type="search"
-                    class="form-control"
+                <search-field
+                    v-model="search"
                     placeholder="Search by name,email,phone,or address..."
-                />
+                >
+                </search-field>
             </div>
         </div>
 
