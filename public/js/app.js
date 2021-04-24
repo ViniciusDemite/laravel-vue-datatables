@@ -1856,6 +1856,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'SearchField',
+  props: {
+    placeholder: {
+      type: String
+    }
+  },
   methods: {
     searchStudents: function searchStudents(value) {
       this.$emit('input', value);
@@ -1876,7 +1881,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _SearchField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchField */ "./resources/js/components/SearchField.vue");
 var _watch;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2067,13 +2071,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    SearchField: _SearchField__WEBPACK_IMPORTED_MODULE_0__.default
-  },
   data: function data() {
     return {
       students: {},
@@ -2234,6 +2232,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.use((vue_toast_notification__WEBPACK_IM
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('students-index', __webpack_require__(/*! ./components/StudentsIndex.vue */ "./resources/js/components/StudentsIndex.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('search-field', __webpack_require__(/*! ./components/SearchField.vue */ "./resources/js/components/SearchField.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -38528,10 +38527,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("input", {
     staticClass: "form-control",
-    attrs: {
-      type: "search",
-      placeholder: "Search by name,email,phone,or address..."
-    },
+    attrs: { type: "search", placeholder: _vm.placeholder },
     on: {
       change: function($event) {
         return _vm.searchStudents($event.target.value)
@@ -38823,7 +38819,10 @@ var render = function() {
           "div",
           { staticClass: "col-md-4" },
           [
-            _c("SearchField", {
+            _c("search-field", {
+              attrs: {
+                placeholder: "Search by name,email,phone,or address..."
+              },
               model: {
                 value: _vm.search,
                 callback: function($$v) {

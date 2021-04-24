@@ -87,13 +87,11 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <SearchField v-model="search" />
-                <!-- <input
-                    v-model.lazy="search"
-                    type="search"
-                    class="form-control"
+                <search-field
+                    v-model="search"
                     placeholder="Search by name,email,phone,or address..."
-                /> -->
+                >
+                </search-field>
             </div>
         </div>
 
@@ -187,12 +185,7 @@
 </template>
 
 <script>
-import SearchField from "./SearchField"
-
 export default {
-    components: {
-        SearchField
-    },
     data() {
         return {
             students: {},

@@ -3,7 +3,7 @@
         @change="searchStudents($event.target.value)"
         type="search"
         class="form-control"
-        placeholder="Search by name,email,phone,or address..."
+        :placeholder="placeholder"
     />
 </template>
 
@@ -11,6 +11,12 @@
 export default {
     name: 'SearchField',
     
+    props: {
+        placeholder: {
+            type: String
+        }
+    },
+
     methods: {
         searchStudents(value) {
             this.$emit('input', value)
