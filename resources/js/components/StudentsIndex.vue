@@ -3,17 +3,14 @@
         <div class="d-flex justify-content-between align-content-center mb-2">
             <div class="d-flex">
                 <div>
-                    <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0">Per Page</label>
-                        <select
-                            v-model="paginate"
-                            class="form-control form-control-sm"
-                        >
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="30">30</option>
-                        </select>
-                    </div>
+                    <paginate-select
+                        v-model="paginate"
+                        label="Per Page"
+                    >
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </paginate-select>
                 </div>
                 <div>
                     <div class="d-flex align-items-center ml-4">
@@ -87,12 +84,11 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <input
-                    v-model.lazy="search"
-                    type="search"
-                    class="form-control"
+                <search-field
+                    v-model="search"
                     placeholder="Search by name,email,phone,or address..."
-                />
+                >
+                </search-field>
             </div>
         </div>
 
@@ -186,6 +182,8 @@
 </template>
 
 <script>
+import PaginateSelect from "./PaginateSelect.vue"
+
 export default {
     data() {
         return {
