@@ -13,7 +13,10 @@
                     </paginate-select>
                 </div>
                 <div>
-                    <app-select v-model="selectedClass" label="FilterBy Class">
+                    <app-select
+                        v-model="selectedClass"
+                        label="FilterBy Class"
+                    >
                         <option value="">All Class</option>
                         <option
                             v-for="item in classes"
@@ -25,7 +28,11 @@
                     </app-select>
                 </div>
 
-                <app-select v-if="selectedClass" v-model="selectedSection" label="Section">
+                <app-select 
+                    v-if="selectedClass"
+                    v-model="selectedSection"
+                    label="Section"
+                >
                     <option value="">Select a Section</option>
                     <option 
                         v-for="section in sections"
@@ -37,36 +44,19 @@
                 </app-select>
 
                 <div>
-                    <div class="dropdown ml-4">
-                        <button
-                            v-if="checked.length > 0"
-                            class="btn btn-secondary dropdown-toggle"
-                            data-toggle="dropdown"
-                            id="dropdownMenu"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            With Checked ({{ checked.length }})
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                            <a
-                                href="#"
-                                class="dropdown-item"
-                                type="button"
-                                onclick="confirm('Are you sure you wanna to delete the selected students?') || event.stopImmediatePropagation()"
-                                @click.prevent="deleteStudents"
-                            >
-                                Delete
-                            </a>
-                            <a
-                                :href="url"
-                                class="dropdown-item"
-                                type="button"
-                            >
-                                Export
-                            </a>
-                        </div>
-                    </div>
+                    <app-dropdown
+                        v-if="checked.length > 0"
+                        toggle="dropdown"
+                        id="dropdownMenu"
+                        :haspopup="true"
+                        :expanded="false"
+                        labelledby="dropdownMenu"
+                        buttonLabel="With Checked"
+                        :length="checked.length"
+                        :url="url"
+                        @deleteAction="deleteStudents"
+                    >
+                    </app-dropdown>
                 </div>
             </div>
             <div class="col-md-4">

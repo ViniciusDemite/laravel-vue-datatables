@@ -31,6 +31,7 @@ Vue.component('students-index', require('./components/StudentsIndex.vue').defaul
 Vue.component('search-field', require('./components/SearchField.vue').default);
 Vue.component('paginate-select', require('./components/PaginateSelect.vue').default);
 Vue.component('app-select', require('./components/AppSelect.vue').default);
+Vue.component('app-dropdown', require('./components/AppDropdown.vue').default);
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 
