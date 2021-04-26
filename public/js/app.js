@@ -1962,6 +1962,39 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'AppTable'
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PaginateSelect.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PaginateSelect.vue?vue&type=script&lang=js& ***!
@@ -2427,6 +2460,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.component('paginate-select', __webpack_
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('app-select', __webpack_require__(/*! ./components/AppSelect.vue */ "./resources/js/components/AppSelect.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('app-dropdown', __webpack_require__(/*! ./components/AppDropdown.vue */ "./resources/js/components/AppDropdown.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('selected-message', __webpack_require__(/*! ./components/SelectedStudentsMessage.vue */ "./resources/js/components/SelectedStudentsMessage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('app-table', __webpack_require__(/*! ./components/AppTable.vue */ "./resources/js/components/AppTable.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -38637,6 +38671,45 @@ component.options.__file = "resources/js/components/AppSelect.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/AppTable.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/AppTable.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppTable.vue?vue&type=template&id=099a3518& */ "./resources/js/components/AppTable.vue?vue&type=template&id=099a3518&");
+/* harmony import */ var _AppTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppTable.vue?vue&type=script&lang=js& */ "./resources/js/components/AppTable.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _AppTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__.render,
+  _AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AppTable.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/PaginateSelect.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/PaginateSelect.vue ***!
@@ -38825,6 +38898,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/AppTable.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/AppTable.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppTable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/PaginateSelect.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************!*\
   !*** ./resources/js/components/PaginateSelect.vue?vue&type=script&lang=js& ***!
@@ -38919,6 +39008,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppSelect_vue_vue_type_template_id_2344e222___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppSelect_vue_vue_type_template_id_2344e222___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppSelect.vue?vue&type=template&id=2344e222& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppSelect.vue?vue&type=template&id=2344e222&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AppTable.vue?vue&type=template&id=099a3518&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/AppTable.vue?vue&type=template&id=099a3518& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTable_vue_vue_type_template_id_099a3518___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppTable.vue?vue&type=template&id=099a3518& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=template&id=099a3518&");
 
 
 /***/ }),
@@ -39109,6 +39215,37 @@ var render = function() {
       [_vm._t("default")],
       2
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=template&id=099a3518&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/AppTable.vue?vue&type=template&id=099a3518& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("table", { staticClass: "table table-hover" }, [
+    _c("thead", [_c("tr", [_vm._t("head")], 2)]),
+    _vm._v(" "),
+    _c("tbody", [_vm._t("body")], 2),
+    _vm._v(" "),
+    _c("tfoot", [_vm._t("foot")], 2)
   ])
 }
 var staticRenderFns = []
@@ -39440,276 +39577,293 @@ var render = function() {
           })
         : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "card-body table-responsive p-0" }, [
-        _c("table", { staticClass: "table table-hover" }, [
-          _c(
-            "tbody",
-            [
-              _c("tr", [
-                _c("th", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.selectedStudentsOnPage,
-                        expression: "selectedStudentsOnPage"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(_vm.selectedStudentsOnPage)
-                        ? _vm._i(_vm.selectedStudentsOnPage, null) > -1
-                        : _vm.selectedStudentsOnPage
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.selectedStudentsOnPage,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              (_vm.selectedStudentsOnPage = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.selectedStudentsOnPage = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
-                        } else {
-                          _vm.selectedStudentsOnPage = $$c
-                        }
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("th", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changeSort("name")
-                        }
-                      }
-                    },
-                    [_vm._v("Student's Name")]
-                  ),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "desc" && _vm.sortField === "name"
-                    ? _c("span", [_vm._v("↑")])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "asc" && _vm.sortField === "name"
-                    ? _c("span", [_vm._v("↓")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("th", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changeSort("email")
-                        }
-                      }
-                    },
-                    [_vm._v("Email")]
-                  ),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "desc" && _vm.sortField === "email"
-                    ? _c("span", [_vm._v("↑")])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "asc" && _vm.sortField === "email"
-                    ? _c("span", [_vm._v("↓")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("th", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changeSort("address")
-                        }
-                      }
-                    },
-                    [_vm._v("Address")]
-                  ),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "desc" && _vm.sortField === "address"
-                    ? _c("span", [_vm._v("↑")])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "asc" && _vm.sortField === "address"
-                    ? _c("span", [_vm._v("↓")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("th", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changeSort("phone_number")
-                        }
-                      }
-                    },
-                    [_vm._v("Phone Number")]
-                  ),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "desc" &&
-                  _vm.sortField === "phone_number"
-                    ? _c("span", [_vm._v("↑")])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "asc" &&
-                  _vm.sortField === "phone_number"
-                    ? _c("span", [_vm._v("↓")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("th", [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.changeSort("created_at")
-                        }
-                      }
-                    },
-                    [_vm._v("Created At")]
-                  ),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "desc" && _vm.sortField === "created_at"
-                    ? _c("span", [_vm._v("↑")])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.sortDiraction === "asc" && _vm.sortField === "created_at"
-                    ? _c("span", [_vm._v("↓")])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Class")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Section")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Action")])
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.students.data, function(student) {
-                return _c(
-                  "tr",
-                  {
-                    key: student.id,
-                    class: _vm.isChecked(student.id) ? "table-primary" : ""
-                  },
-                  [
-                    _c("td", [
+      _c(
+        "div",
+        { staticClass: "card-body table-responsive p-0" },
+        [
+          _c("app-table", {
+            scopedSlots: _vm._u([
+              {
+                key: "head",
+                fn: function() {
+                  return [
+                    _c("th", [
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.checked,
-                            expression: "checked"
+                            value: _vm.selectedStudentsOnPage,
+                            expression: "selectedStudentsOnPage"
                           }
                         ],
                         attrs: { type: "checkbox" },
                         domProps: {
-                          value: student.id,
-                          checked: Array.isArray(_vm.checked)
-                            ? _vm._i(_vm.checked, student.id) > -1
-                            : _vm.checked
+                          checked: Array.isArray(_vm.selectedStudentsOnPage)
+                            ? _vm._i(_vm.selectedStudentsOnPage, null) > -1
+                            : _vm.selectedStudentsOnPage
                         },
                         on: {
                           change: function($event) {
-                            var $$a = _vm.checked,
+                            var $$a = _vm.selectedStudentsOnPage,
                               $$el = $event.target,
                               $$c = $$el.checked ? true : false
                             if (Array.isArray($$a)) {
-                              var $$v = student.id,
+                              var $$v = null,
                                 $$i = _vm._i($$a, $$v)
                               if ($$el.checked) {
-                                $$i < 0 && (_vm.checked = $$a.concat([$$v]))
+                                $$i < 0 &&
+                                  (_vm.selectedStudentsOnPage = $$a.concat([
+                                    $$v
+                                  ]))
                               } else {
                                 $$i > -1 &&
-                                  (_vm.checked = $$a
+                                  (_vm.selectedStudentsOnPage = $$a
                                     .slice(0, $$i)
                                     .concat($$a.slice($$i + 1)))
                               }
                             } else {
-                              _vm.checked = $$c
+                              _vm.selectedStudentsOnPage = $$c
                             }
                           }
                         }
                       })
                     ]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.email))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.address))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.phone_number))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.created_at))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.class))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.section))]),
-                    _vm._v(" "),
-                    _c("td", [
+                    _c("th", [
                       _c(
-                        "button",
+                        "a",
                         {
-                          staticClass: "btn btn-danger btn-sm",
-                          attrs: {
-                            onclick:
-                              "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
-                          },
+                          attrs: { href: "#" },
                           on: {
                             click: function($event) {
-                              return _vm.deleteSingleStudent(student.id)
+                              $event.preventDefault()
+                              return _vm.changeSort("name")
                             }
                           }
                         },
-                        [
-                          _c("i", {
-                            staticClass: "fa fa-trash",
-                            attrs: { "aria-hidden": "true" }
-                          })
-                        ]
-                      )
-                    ])
+                        [_vm._v("Student's Name")]
+                      ),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "desc" && _vm.sortField === "name"
+                        ? _c("span", [_vm._v("↑")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "asc" && _vm.sortField === "name"
+                        ? _c("span", [_vm._v("↓")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("th", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.changeSort("email")
+                            }
+                          }
+                        },
+                        [_vm._v("Email")]
+                      ),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "desc" && _vm.sortField === "email"
+                        ? _c("span", [_vm._v("↑")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "asc" && _vm.sortField === "email"
+                        ? _c("span", [_vm._v("↓")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("th", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.changeSort("address")
+                            }
+                          }
+                        },
+                        [_vm._v("Address")]
+                      ),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "desc" &&
+                      _vm.sortField === "address"
+                        ? _c("span", [_vm._v("↑")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "asc" && _vm.sortField === "address"
+                        ? _c("span", [_vm._v("↓")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("th", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.changeSort("phone_number")
+                            }
+                          }
+                        },
+                        [_vm._v("Phone Number")]
+                      ),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "desc" &&
+                      _vm.sortField === "phone_number"
+                        ? _c("span", [_vm._v("↑")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "asc" &&
+                      _vm.sortField === "phone_number"
+                        ? _c("span", [_vm._v("↓")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("th", [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.changeSort("created_at")
+                            }
+                          }
+                        },
+                        [_vm._v("Created At")]
+                      ),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "desc" &&
+                      _vm.sortField === "created_at"
+                        ? _c("span", [_vm._v("↑")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.sortDiraction === "asc" &&
+                      _vm.sortField === "created_at"
+                        ? _c("span", [_vm._v("↓")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Class")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Section")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Action")])
                   ]
-                )
-              })
-            ],
-            2
-          )
-        ])
-      ]),
+                },
+                proxy: true
+              },
+              {
+                key: "body",
+                fn: function() {
+                  return _vm._l(_vm.students.data, function(student) {
+                    return _c(
+                      "tr",
+                      {
+                        key: student.id,
+                        class: _vm.isChecked(student.id) ? "table-primary" : ""
+                      },
+                      [
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.checked,
+                                expression: "checked"
+                              }
+                            ],
+                            attrs: { type: "checkbox" },
+                            domProps: {
+                              value: student.id,
+                              checked: Array.isArray(_vm.checked)
+                                ? _vm._i(_vm.checked, student.id) > -1
+                                : _vm.checked
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.checked,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = student.id,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 && (_vm.checked = $$a.concat([$$v]))
+                                  } else {
+                                    $$i > -1 &&
+                                      (_vm.checked = $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1)))
+                                  }
+                                } else {
+                                  _vm.checked = $$c
+                                }
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.name))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.email))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.address))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.phone_number))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.created_at))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.class))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(student.section))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-danger btn-sm",
+                              attrs: {
+                                onclick:
+                                  "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deleteSingleStudent(student.id)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-trash",
+                                attrs: { "aria-hidden": "true" }
+                              })
+                            ]
+                          )
+                        ])
+                      ]
+                    )
+                  })
+                },
+                proxy: true
+              }
+            ])
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "row mt-4" }, [
         _c(

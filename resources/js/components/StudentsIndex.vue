@@ -78,42 +78,42 @@
         </selected-message>
         
         <div class="card-body table-responsive p-0">
-            <table class="table table-hover">
-                <tbody>
-                    <tr>
-                        <th>
-                            <input type="checkbox" v-model="selectedStudentsOnPage" />
-                        </th>
-                        <th>
-                            <a href="#" @click.prevent="changeSort('name')">Student's Name</a>
-                            <span v-if="sortDiraction === 'desc' && sortField === 'name'">&uarr;</span>
-                            <span v-if="sortDiraction === 'asc' && sortField === 'name'">&darr;</span>
-                        </th>
-                        <th>
-                            <a href="#" @click.prevent="changeSort('email')">Email</a>
-                            <span v-if="sortDiraction === 'desc' && sortField === 'email'">&uarr;</span>
-                            <span v-if="sortDiraction === 'asc' && sortField === 'email'">&darr;</span>
-                        </th>
-                        <th>
-                            <a href="#" @click.prevent="changeSort('address')">Address</a>
-                            <span v-if="sortDiraction === 'desc' && sortField === 'address'">&uarr;</span>
-                            <span v-if="sortDiraction === 'asc' && sortField === 'address'">&darr;</span>
-                        </th>
-                        <th>
-                            <a href="#" @click.prevent="changeSort('phone_number')">Phone Number</a>
-                            <span v-if="sortDiraction === 'desc' && sortField === 'phone_number'">&uarr;</span>
-                            <span v-if="sortDiraction === 'asc' && sortField === 'phone_number'">&darr;</span>
-                        </th>
-                        <th>
-                            <a href="#" @click.prevent="changeSort('created_at')">Created At</a>
-                            <span v-if="sortDiraction === 'desc' && sortField === 'created_at'">&uarr;</span>
-                            <span v-if="sortDiraction === 'asc' && sortField === 'created_at'">&darr;</span>
-                        </th>
-                        <th>Class</th>
-                        <th>Section</th>
-                        <th>Action</th>
-                    </tr>
+            <app-table>
+                <template v-slot:head>
+                    <th>
+                        <input type="checkbox" v-model="selectedStudentsOnPage" />
+                    </th>
+                    <th>
+                        <a href="#" @click.prevent="changeSort('name')">Student's Name</a>
+                        <span v-if="sortDiraction === 'desc' && sortField === 'name'">&uarr;</span>
+                        <span v-if="sortDiraction === 'asc' && sortField === 'name'">&darr;</span>
+                    </th>
+                    <th>
+                        <a href="#" @click.prevent="changeSort('email')">Email</a>
+                        <span v-if="sortDiraction === 'desc' && sortField === 'email'">&uarr;</span>
+                        <span v-if="sortDiraction === 'asc' && sortField === 'email'">&darr;</span>
+                    </th>
+                    <th>
+                        <a href="#" @click.prevent="changeSort('address')">Address</a>
+                        <span v-if="sortDiraction === 'desc' && sortField === 'address'">&uarr;</span>
+                        <span v-if="sortDiraction === 'asc' && sortField === 'address'">&darr;</span>
+                    </th>
+                    <th>
+                        <a href="#" @click.prevent="changeSort('phone_number')">Phone Number</a>
+                        <span v-if="sortDiraction === 'desc' && sortField === 'phone_number'">&uarr;</span>
+                        <span v-if="sortDiraction === 'asc' && sortField === 'phone_number'">&darr;</span>
+                    </th>
+                    <th>
+                        <a href="#" @click.prevent="changeSort('created_at')">Created At</a>
+                        <span v-if="sortDiraction === 'desc' && sortField === 'created_at'">&uarr;</span>
+                        <span v-if="sortDiraction === 'asc' && sortField === 'created_at'">&darr;</span>
+                    </th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Action</th>
+                </template>
 
+                <template v-slot:body>
                     <tr v-for="student in students.data" :key="student.id" :class="isChecked(student.id) ? 'table-primary' : ''">
                         <td>
                             <input type="checkbox" :value="student.id" v-model="checked"/>
@@ -135,8 +135,8 @@
                             </button>
                         </td>
                     </tr>
-                </tbody>
-            </table>
+                </template>
+            </app-table>
         </div>
         <div class="row mt-4">
             <div class="col-sm-6 offset-5">

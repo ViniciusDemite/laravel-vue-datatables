@@ -33,6 +33,7 @@ Vue.component('paginate-select', require('./components/PaginateSelect.vue').defa
 Vue.component('app-select', require('./components/AppSelect.vue').default);
 Vue.component('app-dropdown', require('./components/AppDropdown.vue').default);
 Vue.component('selected-message', require('./components/SelectedStudentsMessage.vue').default);
+Vue.component('app-table', require('./components/AppTable.vue').default);
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 
