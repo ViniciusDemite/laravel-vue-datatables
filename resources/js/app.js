@@ -30,6 +30,7 @@ Vue.use(VueToast, {
 Vue.component('students-index', require('./components/StudentsIndex.vue').default);
 Vue.component('search-field', require('./components/SearchField.vue').default);
 Vue.component('paginate-select', require('./components/PaginateSelect.vue').default);
+Vue.component('app-select', require('./components/AppSelect.vue').default);
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 

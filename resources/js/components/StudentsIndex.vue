@@ -13,42 +13,28 @@
                     </paginate-select>
                 </div>
                 <div>
-                    <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0">FilterBy Class</label>
-                        <select 
-                            v-model="selectedClass"
-                            class="form-control form-control-sm"
+                    <app-select v-model="selectedClass" label="FilterBy Class">
+                        <option value="">All Class</option>
+                        <option
+                            v-for="item in classes"
+                            :key="item.id"
+                            :value="item.id"
                         >
-                            <option value="">All Class</option>
-                            <option
-                                v-for="item in classes"
-                                :key="item.id"
-                                :value="item.id"
-                            >
-                                {{ item.name }}
-                            </option>
-                        </select>
-                    </div>
+                            {{ item.name }}
+                        </option>
+                    </app-select>
                 </div>
 
-                <div v-if="selectedClass">
-                    <div class="d-flex align-items-center ml-4">
-                        <label for="paginate" class="text-nowrap mr-2 mb-0">Section</label>
-                        <select
-                            v-model="selectedSection"
-                            class="form-control form-control-sm"
-                        >
-                            <option value="">Select a Section</option>
-                            <option 
-                                v-for="section in sections"
-                                :key="section.id"
-                                :value="section.id"
-                            >
-                                {{ section.name }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
+                <app-select v-if="selectedClass" v-model="selectedSection" label="Section">
+                    <option value="">Select a Section</option>
+                    <option 
+                        v-for="section in sections"
+                        :key="section.id"
+                        :value="section.id"
+                    >
+                        {{ section.name }}
+                    </option>
+                </app-select>
 
                 <div>
                     <div class="dropdown ml-4">
