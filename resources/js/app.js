@@ -27,7 +27,7 @@ Vue.use(VueToast, {
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('students-index', require('./components/StudentsIndex.vue').default);
+Vue.component('students-index', require('./view/StudentsIndex.vue').default);
 Vue.component('search-field', require('./components/SearchField.vue').default);
 Vue.component('paginate-select', require('./components/PaginateSelect.vue').default);
 Vue.component('app-select', require('./components/AppSelect.vue').default);

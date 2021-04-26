@@ -147,8 +147,6 @@
 </template>
 
 <script>
-import PaginateSelect from "./PaginateSelect.vue"
-
 export default {
     data() {
         return {
