@@ -2038,6 +2038,64 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'SelectedStudentsMessage',
+  props: {
+    validation: {
+      type: Boolean,
+      required: true
+    },
+    length: {
+      type: Number,
+      required: true
+    },
+    total: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    selectAll: function selectAll() {
+      this.$emit('selectedAll');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StudentsIndex.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StudentsIndex.vue?vue&type=script&lang=js& ***!
@@ -2054,17 +2112,6 @@ var _watch;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2379,6 +2426,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.component('search-field', __webpack_req
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('paginate-select', __webpack_require__(/*! ./components/PaginateSelect.vue */ "./resources/js/components/PaginateSelect.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('app-select', __webpack_require__(/*! ./components/AppSelect.vue */ "./resources/js/components/AppSelect.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('app-dropdown', __webpack_require__(/*! ./components/AppDropdown.vue */ "./resources/js/components/AppDropdown.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('selected-message', __webpack_require__(/*! ./components/SelectedStudentsMessage.vue */ "./resources/js/components/SelectedStudentsMessage.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_2__.default.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -38667,6 +38715,45 @@ component.options.__file = "resources/js/components/SearchField.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/SelectedStudentsMessage.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/SelectedStudentsMessage.vue ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectedStudentsMessage.vue?vue&type=template&id=d0982ece& */ "./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece&");
+/* harmony import */ var _SelectedStudentsMessage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectedStudentsMessage.vue?vue&type=script&lang=js& */ "./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _SelectedStudentsMessage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SelectedStudentsMessage.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/StudentsIndex.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/StudentsIndex.vue ***!
@@ -38770,6 +38857,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectedStudentsMessage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SelectedStudentsMessage.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectedStudentsMessage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/StudentsIndex.vue?vue&type=script&lang=js&":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/StudentsIndex.vue?vue&type=script&lang=js& ***!
@@ -38850,6 +38953,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchField_vue_vue_type_template_id_72dfb3d2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchField_vue_vue_type_template_id_72dfb3d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SearchField.vue?vue&type=template&id=72dfb3d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SearchField.vue?vue&type=template&id=72dfb3d2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece& ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectedStudentsMessage_vue_vue_type_template_id_d0982ece___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SelectedStudentsMessage.vue?vue&type=template&id=d0982ece& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece&");
 
 
 /***/ }),
@@ -39076,6 +39196,59 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SelectedStudentsMessage.vue?vue&type=template&id=d0982ece& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col-md-10 mb-2" }, [
+    _vm.validation
+      ? _c("div", [
+          _vm._v("\n        You are currently selecting all\n        "),
+          _c("strong", [_vm._v(_vm._s(_vm.length))]),
+          _vm._v(" items.\n    ")
+        ])
+      : _c("div", [
+          _vm._v("\n        You have selected "),
+          _c("strong", [_vm._v(_vm._s(_vm.length))]),
+          _vm._v(" items,\n        Do you want to Select All\n        "),
+          _c("strong", [_vm._v(_vm._s(_vm.total))]),
+          _vm._v("?\n        "),
+          _c(
+            "a",
+            {
+              staticClass: "ml-2",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.selectAll($event)
+                }
+              }
+            },
+            [_vm._v("\n            Select All\n        ")]
+          )
+        ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StudentsIndex.vue?vue&type=template&id=da1c9e82&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/StudentsIndex.vue?vue&type=template&id=da1c9e82& ***!
@@ -39092,486 +39265,468 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "d-flex justify-content-between align-content-center mb-2"
-      },
-      [
-        _c(
-          "div",
-          { staticClass: "d-flex" },
-          [
-            _c(
-              "div",
-              [
-                _c(
-                  "paginate-select",
-                  {
-                    attrs: { label: "Per Page" },
-                    model: {
-                      value: _vm.paginate,
-                      callback: function($$v) {
-                        _vm.paginate = $$v
-                      },
-                      expression: "paginate"
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "30" } }, [_vm._v("30")])
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              [
-                _c(
-                  "app-select",
-                  {
-                    attrs: { label: "FilterBy Class" },
-                    model: {
-                      value: _vm.selectedClass,
-                      callback: function($$v) {
-                        _vm.selectedClass = $$v
-                      },
-                      expression: "selectedClass"
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "" } }, [
-                      _vm._v("All Class")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.classes, function(item) {
-                      return _c(
-                        "option",
-                        { key: item.id, domProps: { value: item.id } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(item.name) +
-                              "\n                    "
-                          )
-                        ]
-                      )
-                    })
-                  ],
-                  2
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm.selectedClass
-              ? _c(
-                  "app-select",
-                  {
-                    attrs: { label: "Section" },
-                    model: {
-                      value: _vm.selectedSection,
-                      callback: function($$v) {
-                        _vm.selectedSection = $$v
-                      },
-                      expression: "selectedSection"
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "" } }, [
-                      _vm._v("Select a Section")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.sections, function(section) {
-                      return _c(
-                        "option",
-                        { key: section.id, domProps: { value: section.id } },
-                        [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(section.name) +
-                              "\n                "
-                          )
-                        ]
-                      )
-                    })
-                  ],
-                  2
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "div",
-              [
-                _vm.checked.length > 0
-                  ? _c("app-dropdown", {
-                      attrs: {
-                        toggle: "dropdown",
-                        id: "dropdownMenu",
-                        haspopup: true,
-                        expanded: false,
-                        labelledby: "dropdownMenu",
-                        buttonLabel: "With Checked",
-                        length: _vm.checked.length,
-                        url: _vm.url
-                      },
-                      on: { deleteAction: _vm.deleteStudents }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-4" },
-          [
-            _c("search-field", {
-              attrs: {
-                placeholder: "Search by name,email,phone,or address..."
-              },
-              model: {
-                value: _vm.search,
-                callback: function($$v) {
-                  _vm.search = $$v
-                },
-                expression: "search"
-              }
-            })
-          ],
-          1
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _vm.selectedStudentsOnPage
-      ? _c("div", { staticClass: "col-md-10 mb-2" }, [
-          _vm.selectedAllStudents
-            ? _c("div", [
-                _vm._v(
-                  "\n            You are currently selecting all\n            "
-                ),
-                _c("strong", [_vm._v(_vm._s(_vm.checked.length))]),
-                _vm._v(" items.\n        ")
-              ])
-            : _c("div", [
-                _vm._v("\n            You have selected "),
-                _c("strong", [_vm._v(_vm._s(_vm.checked.length))]),
-                _vm._v(
-                  " items,\n            Do you want to Select All\n            "
-                ),
-                _c("strong", [_vm._v(_vm._s(_vm.students.meta.total))]),
-                _vm._v("?\n            "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "ml-2",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.selectAllStudents($event)
-                      }
-                    }
-                  },
-                  [_vm._v("\n                Select All\n            ")]
-                )
-              ])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-body table-responsive p-0" }, [
-      _c("table", { staticClass: "table table-hover" }, [
-        _c(
-          "tbody",
-          [
-            _c("tr", [
-              _c("th", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedStudentsOnPage,
-                      expression: "selectedStudentsOnPage"
-                    }
-                  ],
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.selectedStudentsOnPage)
-                      ? _vm._i(_vm.selectedStudentsOnPage, null) > -1
-                      : _vm.selectedStudentsOnPage
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.selectedStudentsOnPage,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 &&
-                            (_vm.selectedStudentsOnPage = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.selectedStudentsOnPage = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.selectedStudentsOnPage = $$c
-                      }
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("th", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changeSort("name")
-                      }
-                    }
-                  },
-                  [_vm._v("Student's Name")]
-                ),
-                _vm._v(" "),
-                _vm.sortDiraction === "desc" && _vm.sortField === "name"
-                  ? _c("span", [_vm._v("↑")])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.sortDiraction === "asc" && _vm.sortField === "name"
-                  ? _c("span", [_vm._v("↓")])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("th", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changeSort("email")
-                      }
-                    }
-                  },
-                  [_vm._v("Email")]
-                ),
-                _vm._v(" "),
-                _vm.sortDiraction === "desc" && _vm.sortField === "email"
-                  ? _c("span", [_vm._v("↑")])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.sortDiraction === "asc" && _vm.sortField === "email"
-                  ? _c("span", [_vm._v("↓")])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("th", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changeSort("address")
-                      }
-                    }
-                  },
-                  [_vm._v("Address")]
-                ),
-                _vm._v(" "),
-                _vm.sortDiraction === "desc" && _vm.sortField === "address"
-                  ? _c("span", [_vm._v("↑")])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.sortDiraction === "asc" && _vm.sortField === "address"
-                  ? _c("span", [_vm._v("↓")])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("th", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changeSort("phone_number")
-                      }
-                    }
-                  },
-                  [_vm._v("Phone Number")]
-                ),
-                _vm._v(" "),
-                _vm.sortDiraction === "desc" && _vm.sortField === "phone_number"
-                  ? _c("span", [_vm._v("↑")])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.sortDiraction === "asc" && _vm.sortField === "phone_number"
-                  ? _c("span", [_vm._v("↓")])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("th", [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.changeSort("created_at")
-                      }
-                    }
-                  },
-                  [_vm._v("Created At")]
-                ),
-                _vm._v(" "),
-                _vm.sortDiraction === "desc" && _vm.sortField === "created_at"
-                  ? _c("span", [_vm._v("↑")])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.sortDiraction === "asc" && _vm.sortField === "created_at"
-                  ? _c("span", [_vm._v("↓")])
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Class")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Section")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Action")])
-            ]),
-            _vm._v(" "),
-            _vm._l(_vm.students.data, function(student) {
-              return _c(
-                "tr",
-                {
-                  key: student.id,
-                  class: _vm.isChecked(student.id) ? "table-primary" : ""
-                },
-                [
-                  _c("td", [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.checked,
-                          expression: "checked"
-                        }
-                      ],
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: student.id,
-                        checked: Array.isArray(_vm.checked)
-                          ? _vm._i(_vm.checked, student.id) > -1
-                          : _vm.checked
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$a = _vm.checked,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = student.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.checked = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.checked = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.checked = $$c
-                          }
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.email))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.address))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.phone_number))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.created_at))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.class))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.section))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-danger btn-sm",
-                        attrs: {
-                          onclick:
-                            "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteSingleStudent(student.id)
-                          }
-                        }
-                      },
-                      [
-                        _c("i", {
-                          staticClass: "fa fa-trash",
-                          attrs: { "aria-hidden": "true" }
-                        })
-                      ]
-                    )
-                  ])
-                ]
-              )
-            })
-          ],
-          2
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row mt-4" }, [
+  return _c(
+    "div",
+    [
       _c(
         "div",
-        { staticClass: "col-sm-6 offset-5" },
+        {
+          staticClass:
+            "d-flex justify-content-between align-content-center mb-2"
+        },
         [
-          _c("pagination", {
-            attrs: { data: _vm.students },
-            on: { "pagination-change-page": _vm.getStudents }
+          _c(
+            "div",
+            { staticClass: "d-flex" },
+            [
+              _c(
+                "div",
+                [
+                  _c(
+                    "paginate-select",
+                    {
+                      attrs: { label: "Per Page" },
+                      model: {
+                        value: _vm.paginate,
+                        callback: function($$v) {
+                          _vm.paginate = $$v
+                        },
+                        expression: "paginate"
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "10" } }, [_vm._v("10")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "20" } }, [_vm._v("20")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "30" } }, [_vm._v("30")])
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                [
+                  _c(
+                    "app-select",
+                    {
+                      attrs: { label: "FilterBy Class" },
+                      model: {
+                        value: _vm.selectedClass,
+                        callback: function($$v) {
+                          _vm.selectedClass = $$v
+                        },
+                        expression: "selectedClass"
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "" } }, [
+                        _vm._v("All Class")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.classes, function(item) {
+                        return _c(
+                          "option",
+                          { key: item.id, domProps: { value: item.id } },
+                          [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(item.name) +
+                                "\n                    "
+                            )
+                          ]
+                        )
+                      })
+                    ],
+                    2
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm.selectedClass
+                ? _c(
+                    "app-select",
+                    {
+                      attrs: { label: "Section" },
+                      model: {
+                        value: _vm.selectedSection,
+                        callback: function($$v) {
+                          _vm.selectedSection = $$v
+                        },
+                        expression: "selectedSection"
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "" } }, [
+                        _vm._v("Select a Section")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.sections, function(section) {
+                        return _c(
+                          "option",
+                          { key: section.id, domProps: { value: section.id } },
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(section.name) +
+                                "\n                "
+                            )
+                          ]
+                        )
+                      })
+                    ],
+                    2
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                [
+                  _vm.checked.length > 0
+                    ? _c("app-dropdown", {
+                        attrs: {
+                          toggle: "dropdown",
+                          id: "dropdownMenu",
+                          haspopup: true,
+                          expanded: false,
+                          labelledby: "dropdownMenu",
+                          buttonLabel: "With Checked",
+                          length: _vm.checked.length,
+                          url: _vm.url
+                        },
+                        on: { deleteAction: _vm.deleteStudents }
+                      })
+                    : _vm._e()
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-md-4" },
+            [
+              _c("search-field", {
+                attrs: {
+                  placeholder: "Search by name,email,phone,or address..."
+                },
+                model: {
+                  value: _vm.search,
+                  callback: function($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search"
+                }
+              })
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _vm.selectedStudentsOnPage
+        ? _c("selected-message", {
+            attrs: {
+              validation: _vm.selectedAllStudents,
+              length: _vm.checked.length,
+              total: _vm.students.meta.total
+            },
+            on: { selectedAll: _vm.selectAllStudents }
           })
-        ],
-        1
-      )
-    ])
-  ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body table-responsive p-0" }, [
+        _c("table", { staticClass: "table table-hover" }, [
+          _c(
+            "tbody",
+            [
+              _c("tr", [
+                _c("th", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.selectedStudentsOnPage,
+                        expression: "selectedStudentsOnPage"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      checked: Array.isArray(_vm.selectedStudentsOnPage)
+                        ? _vm._i(_vm.selectedStudentsOnPage, null) > -1
+                        : _vm.selectedStudentsOnPage
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.selectedStudentsOnPage,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              (_vm.selectedStudentsOnPage = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.selectedStudentsOnPage = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.selectedStudentsOnPage = $$c
+                        }
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changeSort("name")
+                        }
+                      }
+                    },
+                    [_vm._v("Student's Name")]
+                  ),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "desc" && _vm.sortField === "name"
+                    ? _c("span", [_vm._v("↑")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "asc" && _vm.sortField === "name"
+                    ? _c("span", [_vm._v("↓")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changeSort("email")
+                        }
+                      }
+                    },
+                    [_vm._v("Email")]
+                  ),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "desc" && _vm.sortField === "email"
+                    ? _c("span", [_vm._v("↑")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "asc" && _vm.sortField === "email"
+                    ? _c("span", [_vm._v("↓")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changeSort("address")
+                        }
+                      }
+                    },
+                    [_vm._v("Address")]
+                  ),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "desc" && _vm.sortField === "address"
+                    ? _c("span", [_vm._v("↑")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "asc" && _vm.sortField === "address"
+                    ? _c("span", [_vm._v("↓")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changeSort("phone_number")
+                        }
+                      }
+                    },
+                    [_vm._v("Phone Number")]
+                  ),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "desc" &&
+                  _vm.sortField === "phone_number"
+                    ? _c("span", [_vm._v("↑")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "asc" &&
+                  _vm.sortField === "phone_number"
+                    ? _c("span", [_vm._v("↓")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.changeSort("created_at")
+                        }
+                      }
+                    },
+                    [_vm._v("Created At")]
+                  ),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "desc" && _vm.sortField === "created_at"
+                    ? _c("span", [_vm._v("↑")])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.sortDiraction === "asc" && _vm.sortField === "created_at"
+                    ? _c("span", [_vm._v("↓")])
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Class")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Section")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Action")])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.students.data, function(student) {
+                return _c(
+                  "tr",
+                  {
+                    key: student.id,
+                    class: _vm.isChecked(student.id) ? "table-primary" : ""
+                  },
+                  [
+                    _c("td", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checked,
+                            expression: "checked"
+                          }
+                        ],
+                        attrs: { type: "checkbox" },
+                        domProps: {
+                          value: student.id,
+                          checked: Array.isArray(_vm.checked)
+                            ? _vm._i(_vm.checked, student.id) > -1
+                            : _vm.checked
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.checked,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = student.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.checked = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.checked = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.checked = $$c
+                            }
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.name))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.email))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.address))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.phone_number))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.created_at))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.class))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(student.section))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger btn-sm",
+                          attrs: {
+                            onclick:
+                              "confirm('Are you sure you wanna to delete this student?') || event.stopImmediatePropagation()"
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteSingleStudent(student.id)
+                            }
+                          }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fa fa-trash",
+                            attrs: { "aria-hidden": "true" }
+                          })
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-4" }, [
+        _c(
+          "div",
+          { staticClass: "col-sm-6 offset-5" },
+          [
+            _c("pagination", {
+              attrs: { data: _vm.students },
+              on: { "pagination-change-page": _vm.getStudents }
+            })
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

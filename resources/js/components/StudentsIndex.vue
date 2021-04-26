@@ -68,26 +68,15 @@
             </div>
         </div>
 
-        <div class="col-md-10 mb-2" v-if="selectedStudentsOnPage">
-            <div v-if="selectedAllStudents">
-                You are currently selecting all
-                <strong>{{ checked.length }}</strong> items.
-            </div>
-            <div v-else>
-                You have selected <strong>{{ checked.length }}</strong> items,
-                Do you want to Select All
-                <strong>{{ students.meta.total }}</strong
-                >?
-                <a 
-                    href="#"
-                    class="ml-2"
-                    @click.prevent="selectAllStudents"
-                >
-                    Select All
-                </a>
-            </div>
-        </div>
-
+        <selected-message
+            v-if="selectedStudentsOnPage"
+            :validation="selectedAllStudents"
+            :length="checked.length"
+            :total="students.meta.total"
+            @selectedAll="selectAllStudents"
+        >
+        </selected-message>
+        
         <div class="card-body table-responsive p-0">
             <table class="table table-hover">
                 <tbody>
