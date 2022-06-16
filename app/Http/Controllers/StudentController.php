@@ -15,9 +15,9 @@ class StudentController extends Controller
         $selectedClass = request('selectedClass');
         $selectedSection = request('selectedSection');
 
-        $sortDiraction = request('sort_diraction', 'desc');
-        if (!in_array($sortDiraction, ['asc', 'desc'])) {
-            $sortDiraction = 'desc';
+        $sortDirection = request('sort_direction', 'desc');
+        if (!in_array($sortDirection, ['asc', 'desc'])) {
+            $sortDirection = 'desc';
         }
 
         $sortField = request('sort_field', 'created_at');
@@ -33,7 +33,7 @@ class StudentController extends Controller
                 $query->where('section_id', $selectedSection);
             })
             ->search(trim($searchTerm))
-            ->orderBy($sortField, $sortDiraction)
+            ->orderBy($sortField, $sortDirection)
             ->paginate($paginate);
 
         return StudentResource::collection($students);
